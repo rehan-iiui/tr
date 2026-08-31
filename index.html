@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Brain Trainer</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         MAIN APP
+    =============================== -->
+
+    <div class="app">
+
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="brain-icon">
+                    🧠
+                </div>
+
+                <div>
+
+                    <h1>
+                        BRAIN TRAINER
+                    </h1>
+
+                    <p>
+                        Train your mind
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-stats">
+
+                <div class="stat">
+
+                    <span>
+                        SCORE
+                    </span>
+
+                    <strong id="score">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <span>
+                        BEST
+                    </span>
+
+                    <strong id="bestScore">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ==============================
+             HOME SCREEN
+        =============================== -->
+
+        <main
+            id="homeScreen"
+            class="screen active"
+        >
+
+            <div class="welcome">
+
+                <h2>
+                    Test Your Brain
+                </h2>
+
+                <p>
+                    Choose a challenge and see
+                    how sharp your mind is.
+                </p>
+
+            </div>
+
+
+            <div class="games-grid">
+
+
+                <!-- REACTION -->
+
+                <button
+                    class="game-card"
+                    data-game="reaction"
+                >
+
+                    <div class="game-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Reaction Test
+                    </h3>
+
+                    <p>
+                        Test how quickly
+                        you can react.
+                    </p>
+
+                    <span class="play-label">
+                        PLAY →
+                    </span>
+
+                </button>
+
+
+                <!-- MEMORY -->
+
+                <button
+                    class="game-card"
+                    data-game="memory"
+                >
+
+                    <div class="game-icon">
+                        🔢
+                    </div>
+
+                    <h3>
+                        Number Memory
+                    </h3>
+
+                    <p>
+                        Remember increasingly
+                        longer numbers.
+                    </p>
+
+                    <span class="play-label">
+                        PLAY →
+                    </span>
+
+                </button>
+
+
+                <!-- PATTERN -->
+
+                <button
+                    class="game-card"
+                    data-game="pattern"
+                >
+
+                    <div class="game-icon">
+                        🟦
+                    </div>
+
+                    <h3>
+                        Pattern Memory
+                    </h3>
+
+                    <p>
+                        Remember the pattern
+                        and repeat it.
+                    </p>
+
+                    <span class="play-label">
+                        PLAY →
+                    </span>
+
+                </button>
+
+
+                <!-- AIM -->
+
+                <button
+                    class="game-card"
+                    data-game="aim"
+                >
+
+                    <div class="game-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Target Rush
+                    </h3>
+
+                    <p>
+                        Click targets as quickly
+                        as possible.
+                    </p>
+
+                    <span class="play-label">
+                        PLAY →
+                    </span>
+
+                </button>
+
+
+                <!-- LOGIC -->
+
+                <button
+                    class="game-card"
+                    data-game="logic"
+                >
+
+                    <div class="game-icon">
+                        🧩
+                    </div>
+
+                    <h3>
+                        Logic Challenge
+                    </h3>
+
+                    <p>
+                        Solve tricky logic
+                        challenges.
+                    </p>
+
+                    <span class="play-label">
+                        PLAY →
+                    </span>
+
+                </button>
+
+
+                <!-- MIXED -->
+
+                <button
+                    class="game-card featured"
+                    data-game="mixed"
+                >
+
+                    <div class="game-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        Brain Marathon
+                    </h3>
+
+                    <p>
+                        A mixture of different
+                        brain challenges.
+                    </p>
+
+                    <span class="play-label">
+                        START →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </main>
+
+
+
+        <!-- ==============================
+             GAME SCREEN
+        =============================== -->
+
+        <main
+            id="gameScreen"
+            class="screen"
+        >
+
+            <div class="game-header">
+
+                <button
+                    id="backBtn"
+                    class="back-button"
+                >
+                    ← MENU
+                </button>
+
+
+                <div class="game-title">
+
+                    <span id="gameIcon">
+                        🧠
+                    </span>
+
+                    <h2 id="gameTitle">
+                        Brain Game
+                    </h2>
+
+                </div>
+
+
+                <div class="game-info">
+
+                    <span>
+                        ROUND
+                    </span>
+
+                    <strong id="round">
+                        1
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- GAME AREA -->
+
+            <section
+                id="gameArea"
+                class="game-area"
+            >
+
+                <div
+                    id="instruction"
+                    class="instruction"
+                >
+                    Get ready...
+                </div>
+
+
+                <div
+                    id="challenge"
+                    class="challenge"
+                >
+
+                </div>
+
+            </section>
+
+
+            <!-- GAME FOOTER -->
+
+            <div class="game-footer">
+
+                <div class="timer-container">
+
+                    <span>
+                        TIME
+                    </span>
+
+                    <strong id="timer">
+                        30
+                    </strong>
+
+                </div>
+
+
+                <div class="lives">
+
+                    <span>
+                        LIVES
+                    </span>
+
+                    <strong id="lives">
+                        ❤️ ❤️ ❤️
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+
+        <!-- ==============================
+             RESULTS SCREEN
+        =============================== -->
+
+        <main
+            id="resultScreen"
+            class="screen"
+        >
+
+            <div class="results-card">
+
+                <div class="result-icon">
+                    🏆
+                </div>
+
+                <h2>
+                    Challenge Complete!
+                </h2>
+
+                <p>
+                    Here is your result.
+                </p>
+
+
+                <div class="final-score">
+
+                    <span>
+                        SCORE
+                    </span>
+
+                    <strong id="finalScore">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="result-stats">
+
+                    <div>
+
+                        <span>
+                            ROUNDS
+                        </span>
+
+                        <strong id="finalRounds">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            BEST
+                        </span>
+
+                        <strong id="resultBest">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="playAgainBtn"
+                    class="primary-button"
+                >
+                    PLAY AGAIN
+                </button>
+
+
+                <button
+                    id="resultMenuBtn"
+                    class="secondary-button"
+                >
+                    MAIN MENU
+                </button>
+
+            </div>
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
